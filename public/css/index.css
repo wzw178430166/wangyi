@@ -259,6 +259,10 @@ a {
 	position: relative;
 	left: -60px;
 }
+#tabLogo .tabLogo_img img{
+	margin-top: 10px;
+	margin-left: 40px;
+}
 #tabLogo #searchInput {
 	height: 23px;
 	width: 320px;
@@ -769,19 +773,19 @@ a {
 	background-size:cover;
 }
 #rotation_chart .rotation_img  .rotation_ima1 {
-	background-image: url(../message/3bebd2e6989424ff6754cc67137d4cc9.jpg);
+	background-image: url(../message/122423ff31174d1634b6f0562d60b8f4.png);
 }
 #rotation_chart .rotation_img  .rotation_ima2 {
 	background-image: url(../message/945dfc5e8722da7107fcd66dd227ecce.jpg);
 }
 #rotation_chart .rotation_img  .rotation_ima3 {
-	background-image: url(../message/122423ff31174d1634b6f0562d60b8f4.jpg);
+	background-image: url(../message/122423ff31174d1634b6f0562d60b8f4.png);
 }
 #rotation_chart .rotation_img  .rotation_ima4 {
-	background-image: url(../message/bf573cd2e0d0233d780c3c268a1a2d25.jpg);
+	background-image: url(../message/945dfc5e8722da7107fcd66dd227ecce.jpg);
 }
 #rotation_chart .rotation_img  .rotation_ima5 {
-	background-image: url(../message/d951bd68d1925ca1ef3cb264c8db8239.jpg);
+	background-image: url(../message/3bebd2e6989424ff6754cc67137d4cc9.png);
 }
 #rotation_chart   .rotation_warrper {
 	height: 35px;
