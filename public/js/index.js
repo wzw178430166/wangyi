@@ -26,11 +26,11 @@
 	  var sign_u=document.getElementById('sign_num'); //账号
 	  user_btn.onclick=fn;
   }())
+
 //点击切换登录方式
 $(function(){
-
 	$('#sign_yanzheng').click(function () {
-		var str='使用邮箱登录';
+		var str='使用验证码登录';
 		if(this.innerHTML!=str) {
 			this.innerHTML =str;
 			$('.verify-wrap').eq(0).hide();
