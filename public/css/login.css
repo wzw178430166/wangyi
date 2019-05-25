@@ -102,3 +102,18 @@
 	outline:none;
 	border-radius:5px;
 }
+  /*验证码*/
+#login_content .t_security{
+	display: inline-block;
+	width:150px;
+	height: 45px;
+	background:linear-gradient(to left,red 0%, #27ff3b 50%,yellow 100%);
+	float: left;
+	font-size:18px;
+	font-weight: 700;
+	text-align: center;
+	line-height: 45px;
+	letter-spacing:10px;
+	font-style:italic;
+	
+}
