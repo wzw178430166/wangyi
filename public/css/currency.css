@@ -484,25 +484,25 @@ animation: frame-color-1 1s linear 0s 1;
 	line-height: 25px;
 	display: block;
 }
-#sign_ful .sign_qiehuan #sign_yanzheng {
-	color: #666;
-	display: inline-block;
-	position: absolute;
-	right:0px;
-}
+
 #sign_ful .sign_div {
 	height: 300px;
 	width: 100%;
 	position: relative;
 	top: 30px;
-	display: block;
+	/*display: none;*/
 }
-#sign_ful .sign_div .sign_divst {
+#sign_ful .sign_divst {
 	line-height: 31px;
 	height: 31px;
 	width: 298px;
 	margin: 0 auto;
 	position: relative;
+	border:1px solid #e8e8e8;
+}
+#log_in .sign_divst{
+	top:20px;
+	border:1px solid #e1e1e1;
 }
 #sign_in .sign_content .sign_bottom {
 	height: 30px;
@@ -576,7 +576,7 @@ animation: frame-color-1 1s linear 0s 1;
 	color: #666;
 }
     /* 用户登录*/
-	
+
 #sign_forms #sign_ful li .verify-wrap {
 	height: 40px;
 	width: 300px;
@@ -655,14 +655,16 @@ animation: frame-color-1 1s linear 0s 1;
 	line-height: 30px;
 	color: #999;
 	text-align: left;
+	border:1px solid #e1e1e1;
 }
 #sign_ful li .sign_yanzhengma #sign_yanztwo {
+	border:1px solid #e1e1e1;
 	line-height: 30px;
 	height: 30px;
 	width: 90px;
 	position: absolute;
 	top: 0px;
-	right: 0px;
+	right: 7px;
 	font-size: 14px;
 	text-align: center;
 	cursor: pointer;
