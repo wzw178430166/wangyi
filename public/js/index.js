@@ -1,14 +1,30 @@
   //用户登录
   (function(){
+	  function fn(){
+		  var $uname=sign_num.value;
+		  var $upwd=u_pwd.value;
+		  //创建异步对象
+		  var xhr=new XMLHttpRequest();
+		  //4.接收响应 监听获取响应数据
+		  xhr.onreadystatechange=function(){
+			  if(xhr.readyState==4&&xhr.status==200){
+				  var result=xhr.responseText;
+				  alert(result);
+			  }
+		  }
+		  //2.打开连接，创建请求
+		  xhr.open("post","http://127.0.0.1:8080/user/login",true);
+		  //3.发送请求
+		  //3.1 创建请求主体
+		  var formdata="phone="+$uname+"&upwd="+$upwd;
+		  //3.2 设置请求消息头
+		  xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+		  xhr.send(formdata);
+	  }
 	 var user_btn=document.getElementById('user_btn');  //登录
 	  var u_pwd=document.getElementById('u_pwd'); //密码
 	  var sign_u=document.getElementById('sign_num'); //账号
-	  user_btn.onclick=function(){
-		  var $uname=sign_u.value;
-		  var $u_pwd=u_pwd.value;
-
-          alert($uname);
-	  }
+	  user_btn.onclick=fn;
   }())
 //点击切换登录方式
 $(function(){
