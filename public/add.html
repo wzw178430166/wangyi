@@ -15,7 +15,7 @@
    </header>
    <div id="login_content">
    <form action="http://127.0.0.1:8080/user/add" method="post">
-    <table width="1000" cellspacing="0">
+    <table width="1000px" cellspacing="0">
     <tr>
      <td>
      <br>
@@ -35,7 +35,7 @@
     </tr>
   <tr>
     <td>账号：</td>
-    <td><input type="text" name="uname" placeholder="网易邮箱/其他邮箱"></td>
+    <td><input type="text" name="uname" placeholder="网易邮箱/其他邮箱" id="u_name"></td>
       <td class="table_ex">账号：</td>
   </tr>
    <tr>
@@ -46,7 +46,7 @@
     </tr>
   <tr>
     <td>密码：</td>
-    <td><input type="password" name="upwd" placeholder="6-16位密码，区分大小写"></td>
+    <td><input type="password" name="upwd" placeholder="6-16位密码，区分大小写" id="u_pwd"></td>
     <td class="table_ex">密码：</td>
   </tr>
    <tr>
@@ -79,7 +79,7 @@
         </tr>
   <tr>
     <td>手机号：</td>
-    <td><input type="tel" name="phone" placeholder="11位手机号"></td>
+    <td><input type="tel" name="phone" placeholder="11位手机号" id="u_phone"></td>
     <td class="table_ex">密码：</td>
   </tr>
    <tr>
@@ -113,17 +113,9 @@
   </tr>
 </table>
    </form>
-   
     <a href="#" style="display:block;margin:0 auto;width:900px;height:100px">
     <img src="message/appe.png" width="900" height="100" >
     </a>
    </div>
-
-   <!-- <form action="user/add" method="get">
-       添加新部门：
-       编号：<input type="text" name="did">
-       部门称号：<input type="text" name="dname">
-         <input type="submit">
-    </form>-->
  </body>
 </html>
