@@ -1,3 +1,35 @@
+  //用户登录
+  (function(){
+	 var user_btn=document.getElementById('user_btn');  //登录
+	  var u_pwd=document.getElementById('u_pwd'); //密码
+	  var sign_u=document.getElementById('sign_num'); //账号
+	  user_btn.onclick=function(){
+		  var $uname=sign_u.value;
+		  var $u_pwd=u_pwd.value;
+
+          alert($uname);
+	  }
+  }())
+//点击切换登录方式
+$(function(){
+
+	$('#sign_yanzheng').click(function () {
+		var str='使用邮箱登录';
+		if(this.innerHTML!=str) {
+			this.innerHTML =str;
+			$('.verify-wrap').eq(0).hide();
+			$('.sign_yanzhengma').eq(0).hide();
+			$('#log_in').show();
+		}else{
+			str='使用密码登陆';
+			this.innerHTML =str;
+			$('.verify-wrap').eq(0).show();
+			$('.sign_yanzhengma').eq(0).show();
+			$('#log_in').hide();
+		}
+	})
+})
+
 // 头部菜单文字滚动
 $(function(){
 		$('#hearder_boxs').kxbdSuperMarquee({direction: 'up',distance:36,time:6,duration:40,scrollDelay:20,isEqual:true,loop: 0});
@@ -473,7 +505,7 @@ for(var i=0;i<menuli.length;i++){
         return false;
       }else{
 		  $('#sign_xegta').hide();
-		  $('.sign_divst').css({"border":"none"});
+		  $('.sign_divst').css({"border-color":"#e8e8e8"});
 		  }
 				  })
 				  
