@@ -1948,7 +1948,7 @@ a {
 #sign_in .sign_content .sign_bottom .sign_btright span:hover {
 	cursor: pointer;
 }
-#sign_ful .sign_div .sign_divst .sign_icon1 {
+#sign_ful .sign_divst .sign_icon1 {
 	height: 25px;
 	width: 13px;
 	position: absolute;
@@ -1956,6 +1956,18 @@ a {
 	top: 6px;
 	background-image: url(../message/sign_bg.png);
 	background-position: 0px 0px;
+}
+
+#log_in .sign_divst .sign_icon2 {
+	height: 25px;
+	width: 20px;
+	position: absolute;
+	left: 8px;
+	top: 3px;
+	background-image: url(../message/password.png);
+	background-position: 0px 2px;
+    background-repeat:no-repeat;
+	z-index: 21;
 }
 #sign_ful .sign_div .sign_divst .sign_forms {
 	height: 30px;
@@ -1968,7 +1980,7 @@ a {
 	font-size: 13px;
 }
 #sign_ful .sign_nums {
-	display: none;
+	outline: 0;
 	height: 30px;
 	width: 200px;
 	border-top-style: none;
@@ -1979,6 +1991,9 @@ a {
 	position: absolute;
 	top: 0px;
 	left: 0px;
+}
+#log_in .sign_divst .sign_nums1{
+	padding-left: 38px;
 }
 #sign_in .sign_content #tab_titles {
 	height: 35px;
@@ -2037,9 +2052,26 @@ a {
 #sign_in .sign_content #tab_titles ul .tab_aff span:hover {
 	color: #000;
 }
+#sign_ful .sign_qiehuan #sign_yanzheng {
+	color: #666;
+	display: inline-block;
+	position: absolute;
+	right:0px;
+}
 #sign_in .sign_content #sign_forms #sign_ful li .sign_qiehuan #sign_yanzheng:hover {
 	color: #b4a078;
 }
+ /*使用密码登录*/
+
+#log_in{
+	width:300px;
+	height: 80px;
+	position: absolute;
+	top:72px;
+	z-index: 20;
+	display: none;
+}
+
 #sign_ful li .sign_div .debnglu {
 	font-size: 18px;
 	line-height: 45px;
