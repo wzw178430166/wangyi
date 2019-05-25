@@ -27,7 +27,7 @@ router.post('/login',function(req,res){
     //var str=bnf.toString();
     //获取post请求数据的对象
     var obj=req.body;
-    console.log(obj);
+   // console.log(obj);
     if(!obj.phone){
         res.send({code:401,msg:'用户名为空'});
         return;
