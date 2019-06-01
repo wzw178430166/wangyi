@@ -5,6 +5,7 @@ body, button, code, input, select, textarea{
 a{text-decoration:none;color:#ccc;font-size:12px;}
 $header_content:1090px;
 $theme_color:#333;
+$theme_font_color:#b4a078;
 #header{
   $news_color:#b4a078;
   $news_h_color:#FFFFFF;
@@ -14,7 +15,7 @@ $theme_color:#333;
   #header_content{
     width:$header_content;height:$height;
     margin:0 auto;
-    background: #333;
+    background:$theme_color;
     div{float:left;}
     .header_left{width:40%;height: $height;line-height:$height;
        div:nth-child(1){
@@ -74,23 +75,130 @@ $theme_color:#333;
       div:first-child>a{
       i{
          display:inline-block;width:10px;height:15px;margin-right:5px;vertical-align: -5px;
-        background: url(../message/bgimg.png);
+        background: url(../../message/bgimg.png);
        }
       }
       div:not(:first-child):after{content:"";display:inline-block;width:1px;height:16px;background:#ccc;vertical-align: -3px;}
-      div:nth-child(2) a:first-child{color:red;display: inline-block;
-
+      div>.head_sever{margin-right:0px;}
+      div>.head_sever:after{content: "";display: inline-block;width:20px;height: 20px;background: url(../../message/ui-icons_777777_256x240.png) no-repeat 3px 2px;vertical-align: -5px;}
+      div>.head_twos{height: 150px;clear: both;position: absolute;top:36px;left: 5px;display:none;
+        box-shadow:
+        -2px 0 2px -1px #ccc,
+        0 2px 2px -1px #ccc,
+        2px 0 2px -1px #ccc;
+        a{color:#999;}
+        a:hover{color:$theme_font_color;};
+        div:not(:last-child):after{display:block;width:60px;height:1px;background: #ccc;margin:0 auto;};
       }
-      div:nth-child(2) a:first-child:after{content: "";display: inline-block;width:20px;height: 20px;background: yellow;vertical-align: -5px;}
-      div:nth-child(2)>div{width:75px;height:100px;position: absolute;top:35px;background:red;
-            p span{width:0;height:0;display:inline-block;margin: 0 auto;
-             border:7px solid white;
-              border-top-color:transparent;border-left-color:transparent;
-              border-right-color:transparent;
-             position: relative;top:-22px;
-            }
+      div:nth-child(2)>div{width:75px;
+        p{height: 0px;}
+        p span{width:0;height:0;display:inline-block;margin: 0 auto;
+          border:7px solid white;
+          border-top-color:transparent;border-left-color:transparent;
+          border-right-color:transparent;
+          position: relative;top:-22px;
+        }
+      }
+      div:nth-child(2):hover{
+        .head_twos{display: block;background: white;}
       }
       div:nth-child(2)>div:after{content: "";display: none;}
+      div:nth-child(3):hover{
+        .head_three{display: block;background: white;}
+      };
+      div>.head_shopping{margin-right:0px;}
+      div>.head_shopping:after{content: "";display: inline-block;width:20px;height: 20px;background: url(../../message/ui-icons_777777_256x240.png) no-repeat 3px 2px;vertical-align: -5px;}
+      div>.head_three{height: 110px;clear: both;position: absolute;top:36px;left: 2px;display: none;
+        box-shadow:
+        -2px 0 2px -1px #ccc,
+        0 2px 2px -1px #ccc,
+        2px 0 2px -1px #ccc;
+        a{color:#999;}
+        a:hover{color:$theme_font_color;};
+        div:not(:last-child):after{display:block;width:60px;height:1px;background: #ccc;margin:0 auto;};
+      }
+      div:nth-child(3)>div{width:75px;
+        p{height: 0px;}
+        p span{width:0;height:0;display:inline-block;margin: 0 auto;
+          border:7px solid white;
+          border-top-color:transparent;border-left-color:transparent;
+          border-right-color:transparent;
+          position: relative;top:-22px;
+        }
+      }
+      div:nth-child(3)>div:after{content: "";display: none;}
+
+      div>.head_phone{margin-right:0px;
+
+      }
+      div>.head_phone:after{content: "";display: inline-block;width:20px;height: 20px;background: url(../../message/ui-icons_777777_256x240.png) no-repeat 3px 2px;vertical-align: -5px;}
+      div>.head_four{height: 180px;clear: both;position: absolute;top:36px;left: 22px;display: none;
+        box-shadow:
+        -2px 0 2px -1px #ccc,
+        0 2px 2px -1px #ccc,
+        2px 0 2px -1px #ccc;
+        a{color:#999;}
+        a:hover{color:$theme_font_color;};
+        div:not(:last-child):after{display:block;width:60px;height:1px;background: #ccc;margin:0 auto;};
+      }
+      div:last-child>div{width:75px;
+        p{height: 0px;}
+        p span{width:0;height:0;display:inline-block;margin: 0 auto;
+          border:7px solid white;
+          border-top-color:transparent;border-left-color:transparent;
+          border-right-color:transparent;
+          position: relative;top:-22px;
+        }
+      }
+      div:last-child>div:after{content: "";display: none;}
+     #head_four:hover #head_mesg{display:block;background:white;}
     };
   }
 }
+
+.header_img{
+     width:100%;
+  .header_icontent{width:$header_content;
+
+    height: 100px;margin:0 auto;line-height: 100px;border-right-color:red;
+    span:nth-child(1){display:inline-block;width:108px;height:38px;background:url(../../message/bgimg.png) no-repeat 0px -242px;position: relative;top:10px;
+    }
+    span:nth-child(2){display:inline;color:$theme_font_color;font-size:24px;margin-left:15px;
+      &:before{content: "";width:1px;height: 24px;display: inline-block;background: $theme_font_color;margin-right: 15px;
+      vertical-align:-3px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:767px){
+  .header_img{width:100%;box-shadow: 0 2px 2px -1px transparent;}
+  .header_icontent{box-shadow: 0 2px 2px -1px #ccc;}
+
+  .my_header{width:100%;height: 11rem;}
+  .footer_height{height: 38rem;}
+
+  .header_div{
+    width:$header_content;
+  }
+}
+@media screen and (min-width:768px) and (max-width:$header_content){
+  .header_img{width:100%;box-shadow: 0 2px 2px -1px transparent;}
+  .header_icontent{box-shadow: 0 2px 2px -1px #ccc;}
+
+  .my_header{width:100%;height: 12rem;}
+  .footer_height{height: 38rem;}
+
+  .header_div{
+    width:$header_content;
+  }
+}
+@media screen and (min-width:$header_content){
+  .header_img{width:100%;box-shadow: 0 2px 2px -1px #ccc;}
+  .header_icontent{box-shadow: 0 2px 2px -1px transparent;}
+
+  .my_header{width:100%;height: 7rem;}
+  .footer_height{height: 22rem}
+
+}
+.my_header,.my_footer{width:100%;}
