@@ -34,6 +34,7 @@ img{
 	margin: 0 auto;
 	position: relative;
 	line-height: 36px;
+	background: #3B3B3B;
 }
 #hearder .hearder_left .hearder_live {
 	height: 36px;
@@ -88,13 +89,13 @@ a {
 	text-decoration: none;
 }
 #hearder_boxs {
-	height: 36px;
-	width: 300px;
-	position: relative;
-	left: 30px;
-	top: -50px;
-	overflow: hidden;
-}
+	 height: 36px;
+	 width: 300px;
+	 position: relative;
+	 left: 30px;
+	 top: -50px;
+	 overflow: hidden;
+ }
 #hearder_boxs .hearder_message{
 	width: 300px;
 }
@@ -2117,6 +2118,7 @@ a {
 	bottom: 0px;
 	display: none;
 	border:none;
+	outline: 0;
 }
 #shoppings .shoppings_rights ul li .shoppings_nte a .shoppings_messng .shoppings_now:hover {
 	background-color: #F33;
