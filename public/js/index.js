@@ -1,8 +1,8 @@
   //用户登录
-  (function(){
+  (function(){ 
 	  function fn(){
 		  var $uname=sign_num.value;
-		  var $upwd=u_pwd.value;
+		  var $upwd=u_pwd.value; 
 		  //创建异步对象
 		  var xhr=new XMLHttpRequest();
 		  //4.接收响应 监听获取响应数据
