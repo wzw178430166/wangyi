@@ -26,7 +26,7 @@ CREATE TABLE xz_laptop(
   resolution VARCHAR(32),     #分辨率
   video_card VARCHAR(32),     #显卡型号
   cpu VARCHAR(32),            #处理器
-  video_memory VARCHAR(32),   #显存容量
+  video_memory VARCHAR(32),   #显存 容量
   category VARCHAR(32),       #所属分类
   disk VARCHAR(32),           #硬盘容量及类型
   details VARCHAR(1024),      #产品详细说明
