@@ -1,2 +1,17 @@
-#int_top {
-  background: #333; }
+*{margin:0;padding: 0};
+body, button, code, input, select, textarea{
+  font:12px/1.5 "Microsoft Yahei";
+}
+a{text-decoration:none;color:#ccc;font-size:12px;};
+ul{list-style: none;}
+
+@media screen and (max-width:767px){
+  body:after{content:"";width:1090px;height:5px;background:#414141;display: block;}
+}
+@media screen and (min-width:768px) and (max-width:1090px){
+  body:after{content:"";width:1090px;height:5px;background:#414141;display: block;}
+}
+@media screen and (min-width:1090px){
+  body:after{content:"";width:100%;height:5px;background:#414141;display: block;}
+}
+
