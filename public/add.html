@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
- <head> 
+ <head>
   <meta charset="UTF-8">
   <meta name="Generator" content="EditPlus®">
   <meta name="Author" content="">
@@ -8,6 +8,8 @@
   <meta name="Description" content="">
   <title>网易账号中心</title>
   <link rel="stylesheet" type="text/css" href="css/login.css">
+     <script src="lib/jquery.min.js"></script>
+     <script src="js/add/add.js"></script>
  </head>
  <body>
    <header id="login_head">
@@ -35,8 +37,8 @@
     </tr>
   <tr>
     <td>账号：</td>
-    <td><input type="text" name="uname" placeholder="网易邮箱/其他邮箱" id="u_name"></td>
-      <td class="table_ex">账号：</td>
+    <td><input type="text" name="uname" placeholder="网易邮箱/其他邮箱" id="u_name" onblur="v_uname()"></td>
+      <td class="table_ex" id="uname_msg"></td>
   </tr>
    <tr>
      <td>
@@ -46,8 +48,8 @@
     </tr>
   <tr>
     <td>密码：</td>
-    <td><input type="password" name="upwd" placeholder="6-16位密码，区分大小写" id="u_pwd"></td>
-    <td class="table_ex">密码：</td>
+    <td><input type="password" name="upwd" placeholder="6-16位密码，区分大小写" id="u_pwd" onblur="v_upwd()"></td>
+    <td class="table_ex" id="upwd_msg"></td>
   </tr>
    <tr>
      <td>
@@ -105,7 +107,7 @@
     </tr>
   <tr>
     <td>&nbsp;</td>
-    <td><input type="submit" value="注 &nbsp;册" id="logins"></td>
+    <td><input type="submit" value="注&nbsp;册" id="logins"></td>
   </tr>
   <tr>
     <td>&nbsp;</td>
