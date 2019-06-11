@@ -1,5 +1,5 @@
 const express=require('express');
-//创建web服务器
+// 创建web服务器
 var server=express();
 server.listen(8080);
 //引入mysql模块
