@@ -1,4 +1,4 @@
-//判断浏览器类型
+//判断 浏览器类型
     var  Judging_browsers=(function(){
 	    var Sysst = function(){};
 		var ua = navigator;
