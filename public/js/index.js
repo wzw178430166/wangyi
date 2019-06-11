@@ -1,6 +1,6 @@
   "use strict";
   //用户登录
-  (function(){
+  (function(){  
 	  function fn(){
 		  var $uname=sign_num.value;
 		  var $upwd=u_pwd.value;
@@ -21,7 +21,7 @@
 		  //3.2 设置请求消息头
 		  xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 		  xhr.send(formdata);
-	  }
+	  } 
 	 var user_btn=document.getElementById('user_btn');  //登录
 	  var u_pwd=document.getElementById('u_pwd'); //密码
 	  var sign_u=document.getElementById('sign_num'); //账号
@@ -142,7 +142,7 @@ $(function(){
 
   //首页菜单导航栏 + 浮动菜单栏   切换样式
   $(function(){
-	  //菜单
+	  //菜单 
 	  	  var nav_shouye=$('#nav_shouye').children('li');
 	   nav_shouye.hoverDelay(function(){
 
