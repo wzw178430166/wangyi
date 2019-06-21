@@ -1,16 +1,26 @@
   "use strict";
   //用户登录
-  (function(){  
+  (function(){
 	  function fn(){
-		  var $uname=sign_num.value;
-		  var $upwd=u_pwd.value;
+		  var u_pwds=document.getElementById('u_pwd');
+		  var sign_nums=document.getElementById('sign_num');
+		  var $uname=sign_nums.value;
+		  var $upwd=u_pwds.value;
 		  //创建异步对象
 		  var xhr=new XMLHttpRequest();
 		  //4.接收响应 监听获取响应数据
+		//  console.log(xhr);
 		  xhr.onreadystatechange=function(){
+			//  console.log(xhr.onreadystatechange);
 			  if(xhr.readyState==4&&xhr.status==200){
 				  var result=xhr.responseText;
-				  alert(result);
+				  console.log(result);
+				  if(result=="1"){
+				  alert('登录成功');
+					  location.href="/personal.html";
+				  }else{
+					  alert('密码错误');
+				  }
 			  }
 		  };
 		  //2.打开连接，创建请求
@@ -21,7 +31,7 @@
 		  //3.2 设置请求消息头
 		  xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 		  xhr.send(formdata);
-	  } 
+	  }
 	 var user_btn=document.getElementById('user_btn');  //登录
 	  var u_pwd=document.getElementById('u_pwd'); //密码
 	  var sign_u=document.getElementById('sign_num'); //账号
@@ -95,7 +105,7 @@ $(function(){
 			$(function () {
         //手动控制轮播图
         $('.rotation_img li').eq(0).show();  
-        $('.rotation_index li').mouseover(function () {     
+        $('.rotation_index li').mouseenter(function () {     
     $(this).addClass('rotation_li').siblings().removeClass('rotation_li');
     var index = $(this).index();
     $('.rotation_img li').eq(index).stop(true,true).fadeIn("fast").siblings().stop(true,true).fadeOut("fast");  
@@ -142,7 +152,7 @@ $(function(){
 
   //首页菜单导航栏 + 浮动菜单栏   切换样式
   $(function(){
-	  //菜单 
+	  //菜单
 	  	  var nav_shouye=$('#nav_shouye').children('li');
 	   nav_shouye.hoverDelay(function(){
 
@@ -221,7 +231,7 @@ $(function(){
 			 	var self=this;
 				 var objlist=window.getElementsByClassName(objlist);
 				  for(var i=0;i<objlist.length;i++){
-			  objlist[i].onmouseover=function(){
+			  objlist[i].onmouseenter=function(){
 				     var img=this.getElementsByTagName('img')[0];
 				  img.className=classname;  
 				  	img.style.width=Math.floor(self.widths)+10+'px';
@@ -229,7 +239,7 @@ $(function(){
 				  // console.log(Math.floor(self.widths)+10);
 				    //console.log(Math.floor(self.heights)+10);
 				  }
-				    objlist[i].onmouseout=function(){
+				    objlist[i].onmouseleave=function(){
 				     var img=this.getElementsByTagName('img')[0];
 				  img.style.width=(self.widths)+'px';
 				    img.style.height=(self.heights)+'px';
@@ -319,10 +329,10 @@ for(var i=0;i<menuli.length;i++){
 		menuli[this.index].className="tab_off";
 		neirong[this.index].style.display="block";
 	}
-	menuli[i].onmouseover=function(){
+	menuli[i].onmouseenter=function(){
 		this.style.color="#b4a078";
 		}
-		menuli[i].onmouseout=function(){
+		menuli[i].onmouseleave=function(){
 			this.style.color="#333";
 			}
 }
@@ -476,20 +486,20 @@ sign_ins.className = "mongolia"
       	labenum.innerHTML=bgrighta;
       }
     }
-							var menuli=document.getElementById("tab_titles").getElementsByTagName("li");
-var neirongs=document.getElementById("sign_ful");
-var neirong=getchilds(neirongs);
-for(var i=0;i<menuli.length;i++){
-	menuli[i].index=i;
-	menuli[i].onclick=function(){
-		for(var j=0;j<menuli.length;j++){
+				var menuli=document.getElementById("tab_titles").getElementsByTagName("li");
+                var neirongs=document.getElementById("sign_ful");
+				var neirong=getchilds(neirongs);
+				for(var i=0;i<menuli.length;i++){
+				menuli[i].index=i;
+				menuli[i].onclick=function(){
+				for(var j=0;j<menuli.length;j++){
 			menuli[j].className="";
 			neirong[j].style.display="none";
+			}
+			menuli[this.index].className="tab_aff";
+			neirong[this.index].style.display="block";
+				}
 		}
-		menuli[this.index].className="tab_aff";
-		neirong[this.index].style.display="block";
-	}
-}
 	      //请输入手机号码
 	       $('.sign_forms').click(function(){                
 			   $('#sign_num').show();
@@ -566,3 +576,90 @@ for(var i=0;i<menuli.length;i++){
 					},300);
 				})	
 				})
+
+				//动态生成轮播图图片
+  $(function () {
+	  var carousel=document.getElementById('carousel');
+	  //向localhost:3000/index发送请求，获得数据
+	  $.ajax({
+		  url:"http://127.0.0.1:8080/product",  //当前客户端向这个地址的服务器发送请求
+		  type:"get",//请求类型
+		  //无请求参数
+		  dataType:"json"//返回值类型   //如果返回不是json 就不要写会出错 ，  因为dataType:"json"===JSON.parse()没有这个方法会报错
+		//  success:function(result){} //会在请求成功接收后自动调用，
+	  })//.then中的函数会在请求结束后，自动执行
+		  //        open(result)
+		  //               ↓
+		  .then(function(result){   //看jq是新版本就用这个方法，不是就用上一个success （不支持es6时候用）
+			  //先取出结果数组中第一个商品
+			  var obj=result;
+			  for(var i in obj){
+				  //将p1的属性，填充进HTML片段中
+				 // var i=0;
+					  var html=`
+					  <li class="rotation_ima1"><a href="#">
+					  <img src="${obj[0].href}" alt="" title="${obj[0].title}"/>
+					  </a></li>
+					  <li class="rotation_ima2"><a href="#">
+					  <img src="${obj[1].href}" alt="" title="${obj[1].title}"/>
+					  </a></li>
+					  <li class="rotation_ima3"><a href="#">
+					  <img src="${obj[2].href}" alt="" title="${obj[2].title}"/>
+					  </a></li>
+					  <li class="rotation_ima4"><a href="#">
+					  <img src="${obj[3].href}" alt="" title="${obj[3].title}"/>
+					  </a></li>
+					  <li class="rotation_ima5"><a href="#">
+					  <img src="${obj[4].href}" alt="" title="${obj[4].title}"/>
+					  </a></li>
+						`;
+					  //放回页面中原位置: 
+					  carousel.innerHTML=html;
+			  }
+		  })
+  })
+
+  //动态生成品牌制造商
+  
+  $(function () {
+	  var brand1=document.getElementsByClassName('brand_dfjk')[0];
+	  var brand2=document.getElementsByClassName('brand_dfjk')[1];
+	  var brand3=document.querySelectorAll('.brand_right')[0];
+	  var brand4=document.querySelectorAll('.brand_right')[0];
+	  //向localhost:3000/index发送请求，获得数据
+	  $.ajax({
+		  url:"http://127.0.0.1:8080/product/brand",
+		  type:"get",//请求类型
+		  //无请求参数
+		  dataType:"json"//返回值类型
+	  })//.then中的函数会在请求结束后，自动执行
+		  //        open(result)
+		  //               ↓
+		  .then(function(result){
+
+			  //先取出结果数组中第一个商品
+			  var obj1=result[0];
+				  //将obj1的属性，填充进HTML片段中
+				  var html=` <a href="#">
+			  <div class="brand_df">${obj1.title}<i>上新</i></div>
+			  <p></p>
+			  <span>${obj1.price}元起</span>
+			  <div class="brand_imgs">
+			  <img src="${obj1.href}" width="350" height="320" /></div>
+			  </a>`;
+			  //放回页面中原位置:
+			  brand1.innerHTML=html;
+
+			  var obj2=result[1];
+			  var html=` <a href="#">
+			  <div class="brand_df">${obj2.title}</div>
+			  <p></p>
+			  <span>${obj2.price}元起</span>
+			  <div class="brand_imgs">
+			  <img src="${obj2.href}" width="350" height="320" /> </div>
+			  </a>`;
+			  brand2.innerHTML=html;
+
+			  //第三第四个不好改，布局问题。 按照第一第二个布局才行。 大的div里面两个div每个div里面再包a标签
+		  })
+  })
